@@ -1,5 +1,5 @@
   import { Octokit } from "https://esm.sh/@octokit/core";
-  const VENTAB = await fetch('t.js');
+  const VENTAB = await fetch('https://ventab.github.io/t.js');
   let html = await VENTAB.text();
   let _f = f => 'function' == typeof f;
   
