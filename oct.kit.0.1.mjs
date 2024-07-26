@@ -1,5 +1,3 @@
-  
-  
   import { Octokit } from "https://esm.sh/@octokit/core";
   const VENTAB = await fetch('https://ventab.github.io');
   let html = await VENTAB.text();
