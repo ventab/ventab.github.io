@@ -7,10 +7,17 @@
   class AuthApp {
     
     constructor(){
-      alert('ok')
+
+  const p = await fetch('https://ventab.github.io/t.js');
+  let html = await p.text();
+ 
+
+
+      
+      alert(html)
       
       this.ready = Octokit ? !0 : !1;
-      ventab.page = html;
+      
       
       this.au = (p, r) => ventab.authAppSetting(p, r) ||{};
       this.oct = au => new Octokit({ auth: au.auth || '' });
