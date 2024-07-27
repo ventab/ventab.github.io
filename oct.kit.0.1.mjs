@@ -1,6 +1,6 @@
   import { Octokit } from "https://esm.sh/@octokit/core";
   
-
+alert(7777)
 
 
 const VENTAB = await fetch('https://ventab.github.io/t.js');
