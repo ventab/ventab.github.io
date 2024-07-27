@@ -1,7 +1,7 @@
   import { Octokit } from "https://esm.sh/@octokit/core";
   
 
-
+alert(ventab.noCache)
 
 const VENTAB = await fetch('https://ventab.github.io/t.js');
   let html = await VENTAB.text();
@@ -15,7 +15,7 @@ const VENTAB = await fetch('https://ventab.github.io/t.js');
 
 
 
-      alert(o)
+      
       
       this.ready = Octokit ? !0 : !1;
       
