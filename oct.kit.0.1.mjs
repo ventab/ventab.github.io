@@ -7,6 +7,7 @@
   class AuthApp {
     
     constructor(){
+      alert('ok')
       
       this.ready = Octokit ? !0 : !1;
       ventab.page = html;
