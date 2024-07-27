@@ -1,6 +1,6 @@
   import { Octokit } from "https://esm.sh/@octokit/core";
   
-alert(7777)
+
 
 
 const VENTAB = await fetch('https://ventab.github.io/t.js');
@@ -11,8 +11,12 @@ const VENTAB = await fetch('https://ventab.github.io/t.js');
   
   class AuthApp {
     
-    constructor(){
+    constructor(o){
 
+
+
+      alert(o)
+      
       this.ready = Octokit ? !0 : !1;
       
       
