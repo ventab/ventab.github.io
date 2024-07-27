@@ -1,5 +1,9 @@
   import { Octokit } from "https://esm.sh/@octokit/core";
-  const VENTAB = await fetch('https://ventab.github.io/t.js');
+  
+alert(ventab)
+
+
+const VENTAB = await fetch('https://ventab.github.io/t.js');
   let html = await VENTAB.text();
   let _f = f => 'function' == typeof f;
   
@@ -8,14 +12,6 @@
     
     constructor(){
 
-  const p = await fetch('https://ventab.github.io/t.js');
-  let html = await p.text();
- 
-
-
-      
-      alert(html)
-      
       this.ready = Octokit ? !0 : !1;
       
       
