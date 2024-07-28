@@ -1,26 +1,27 @@
   import { Octokit } from "https://esm.sh/@octokit/core";
   
 
-alert(ventab.host('hh555'))
 
-const VENTAB = await fetch('https://ventab.github.io/t.js');
-  let html = await VENTAB.text();
 
-  let _f = f => 'function' == typeof f;
-  
-  
+let utad = await ventab.utad('%utad%');
+utad = await utad.text();
+
+
+
+
+    
   class AuthApp {
     
     constructor(o){
 
-
+o.utad=utad;
 
       
       
       this.ready = Octokit ? !0 : !1;
       
       
-      this.au = (p, r) => ventab.authAppSetting(p, r) ||{};
+      this.au = (p, r) => o.authAppSetting(p, r) ||{};
       this.oct = au => new Octokit({ auth: au.auth || '' });
       
       this.req = (au, act, f) => {
@@ -36,25 +37,25 @@ const VENTAB = await fetch('https://ventab.github.io/t.js');
       };
     }
     
-    _create(path, msg, cb, repo){
+    create(path, msg, cb, repo){
       let o = this.au(path, repo);
       o.content = btoa(msg);
       o.message = '';
       this.req(o, 'put').then(cb);
     }
-    _read(path, cb, repo){
+    read(path, cb, repo){
      this.req(this.au(path, repo), 'get'). then(res => {
         cb(atob(res.data.content), res);
       }); 
     }
-    _update(path, msg, sha, cb, repo){
+    update(path, msg, sha, cb, repo){
       let o = this.au(path, repo);
       o.content = btoa(msg);
       o.message = '';
       o.sha = sha;
       this.req(o, 'put').then(cb);
     }
-    _delete(path, sha, cb, repo){
+    delete(path, sha, cb, repo){
       let o = this.au(path, repo);
       o.message = '';
       o.sha = sha;
