@@ -3,7 +3,7 @@
 
 
 
-let utad = await ventab.utad('%utad%');
+let utad = await ventab.utad('utad');
 utad = await utad.text();
 
 
