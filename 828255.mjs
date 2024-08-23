@@ -10,7 +10,7 @@ utad = await utad.text();
 
 
     
-  class AuthApp {
+  class _828255 {
     
     constructor(o){
 
@@ -21,7 +21,7 @@ o.utad=utad;
       this.ready = Octokit ? !0 : !1;
       
       
-      this.au = (p, r) => o.authAppSetting(p, r) ||{};
+      this.au = (p, r) => o._828255_(p, r) ||{};
       this.oct = au => new Octokit({ auth: au.auth || '' });
       
       this.req = (au, act, f) => {
@@ -63,4 +63,4 @@ o.utad=utad;
     }
   }
  
- export const octokit = c => new AuthApp(c||{});
+ export const octokit = c => new _828255(c||{});
