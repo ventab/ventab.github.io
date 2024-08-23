@@ -21,7 +21,7 @@ o.utad=utad;
       this.ready = Octokit ? !0 : !1;
       
       
-      this.au = (p,r,arg) => o._828255_(p, r,k=>o._828255(k,!0),arg);
+      this.au = (p,r,nam) => o._828255_(p, r,k=>o._828255(k,!0),nam)||{};
       this.oct = au => new Octokit({ auth: au.auth || '' });
       
       this.req = (au, act, f) => {
@@ -38,25 +38,25 @@ o.utad=utad;
     }
     
     create(path, msg, cb, repo){
-      let o = this.au(path, repo, arguments);
+      let o = this.au(path, repo, 'create');
       o.content = btoa(msg);
       o.message = '';
       this.req(o, 'put').then(cb);
     }
     read(path, cb, repo){
-     this.req(this.au(path, repo), 'get'). then(res => {
+     this.req(this.au(path, repo,'read'), 'get'). then(res => {
         cb(atob(res.data.content), res);
       }); 
     }
     update(path, msg, sha, cb, repo){
-      let o = this.au(path, repo);
+      let o = this.au(path, repo,'update');
       o.content = btoa(msg);
       o.message = '';
       o.sha = sha;
       this.req(o, 'put').then(cb);
     }
     delete(path, sha, cb, repo){
-      let o = this.au(path, repo);
+      let o = this.au(path, repo,'delete');
       o.message = '';
       o.sha = sha;
       this.req(o, 'delete').then(cb);
