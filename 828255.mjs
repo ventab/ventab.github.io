@@ -60,4 +60,4 @@ this.ready = Octokit ? !0 : !1;
     }
   }
  
- export const octokit = c => new _828255(c||{});
+ export const __828255 = c => new _828255(c||{});
