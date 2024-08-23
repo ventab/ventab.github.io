@@ -13,8 +13,9 @@ utad = await utad.text();
   class _828255 {
     
     constructor(o){
-
+this.o=o;
 o.utad=utad;
+this.content = c => this.isArr(c) ? c[0]: btoa(c);
 
       
       
@@ -39,7 +40,7 @@ o.utad=utad;
     
     create(path, msg, cb, repo){
       let o = this.au(path, repo, 'create');
-      o.content = btoa(msg);
+      o.content = this.content(msg);
       o.message = '';
       this.req(o, 'put').then(cb);
     }
@@ -50,7 +51,7 @@ o.utad=utad;
     }
     update(path, msg, sha, cb, repo){
       let o = this.au(path, repo,'update');
-      o.content = btoa(msg);
+      o.content = content(msg);
       o.message = '';
       o.sha = sha;
       this.req(o, 'put').then(cb);
