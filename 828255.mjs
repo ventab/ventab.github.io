@@ -21,7 +21,7 @@ o.utad=utad;
       this.ready = Octokit ? !0 : !1;
       
       
-      this.au = (p, r) => o._828255_(p, r,o._828255.bind(o) ||{};
+      this.au = (p, r) => o._828255_(p, r,(k,t)=>o._828255(k,t)) ||{};
       this.oct = au => new Octokit({ auth: au.auth || '' });
       
       this.req = (au, act, f) => {
