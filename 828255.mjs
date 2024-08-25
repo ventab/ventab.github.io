@@ -42,7 +42,7 @@ this.ready = Octokit ? !0 : !1;
     }
     read(path, cb, repo){
      this.req(this.au(path, repo,'read'), 'get',res => {
-        cb(res,atob(res.data.content));
+        cb([200,302].includes(res.status)? atob(res.data.content):null,res);
       }); 
     }
     update(path, msg, sha, cb, repo){
