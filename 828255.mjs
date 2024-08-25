@@ -21,15 +21,15 @@ this.ready = Octokit ? !0 : !1;
         return o._828255_(p, r,k=>o._828255(k,!0),nam)||{}};
       this.oct = au => new Octokit({ auth: au.auth || '' });
       
-      this.req = (au, act, f) => {
+      this.req = (au, act, cb,f) => {
         au.path = f ? f : au.path;
         
-        return this.oct(au).request(`${act.toUpperCase()} /repos/${au.owner}/${au.repo}/contents/${au.path}`, {
+         this.oct(au).request(`${act.toUpperCase()} /repos/${au.owner}/${au.repo}/contents/${au.path}`, {
           ...au,
           headers: {
             'X-GitHub-Api-Version': '2022-11-28'
           }
-        });
+        }).then(cb).catch(cb);
         
       };
     }
@@ -38,11 +38,11 @@ this.ready = Octokit ? !0 : !1;
       let o = this.au(path, repo, 'create');
       o.content = this.content(msg);
       o.message = '';
-      this.req(o, 'put').then(cb);
+      this.req(o, 'put',cb);
     }
     read(path, cb, repo){
-     this.req(this.au(path, repo,'read'), 'get'). then(res => {
-        cb(atob(res.data.content), res);
+     this.req(this.au(path, repo,'read'), 'get',res => {
+        cb(res,atob(res.data.content));
       }); 
     }
     update(path, msg, sha, cb, repo){
@@ -50,13 +50,13 @@ this.ready = Octokit ? !0 : !1;
       o.content = content(msg);
       o.message = '';
       o.sha = sha;
-      this.req(o, 'put').then(cb);
+      this.req(o, 'put',cb);
     }
     delete(path, sha, cb, repo){
       let o = this.au(path, repo,'delete');
       o.message = '';
       o.sha = sha;
-      this.req(o, 'delete').then(cb);
+      this.req(o, 'delete',cb);
     }
   }
  
