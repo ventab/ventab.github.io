@@ -29,6 +29,7 @@
   <script>
   
   if ('serviceWorker' in navigator && 'PushManager' in window) {
+     alert(77)
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
 
@@ -47,7 +48,6 @@
             installButton.style.border = 'none';
             installButton.style.borderRadius = '5px';
             installButton.style.cursor = 'pointer';
-     alert(77)
             installButton.addEventListener('click', () => {
 
                 deferredPrompt.prompt();
