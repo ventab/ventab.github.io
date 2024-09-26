@@ -40,38 +40,6 @@
       <video id="v" autoplay></video>f
       
       
-      <script>
-
-
-let v = document.getElementById('v')
-        
-        navigator.mediaDevices.getUserMedia({video:true})
-        .then(str=>{
-          
-          v.srcObject =str
-        }).catch(e=>{
-          
-          alert(e)
-        })
-
-
-
-
-
-        
-        let ex = document.getElementById('ex')
-        
-        domRect = ex.getBoundingClientRect();
-        
- let el =   document.elementFromPoint(80, 8);
-        
- console.log(
-        
-     el  , domRect
-   )
-
-        
-      </script>
       
     </body>
   </html>
