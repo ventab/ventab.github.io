@@ -13,7 +13,24 @@
     <body> 
       <h1>VENTAB App</h1>
       <HR>
-      <a href="pwa">pwa test app</a>
+      <a href="pwa">pwa test app 2</a>
+      
+      
+      
+       <button id="install" hidden>Install</button>
+   <script>
+     let installPrompt = null;
+const installButton = document.querySelector("#install");
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  installPrompt = event;
+  installButton.removeAttribute("hidden");
+});
+     
+     
+   </script>
+  
       
       
     </body>
