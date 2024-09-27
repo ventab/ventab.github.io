@@ -29,8 +29,8 @@
   <script>
   
   if ('serviceWorker' in navigator && 'PushManager' in window) {
-     alert(77)
         window.addEventListener('beforeinstallprompt', (e) => {
+     alert(77)
             e.preventDefault();
 
             const deferredPrompt = e;
@@ -40,7 +40,6 @@
             installButton.style.position = 'fixed';
             installButton.style.top = '10px';
             installButton.style.left = '50%';
-            installButton.style.transform = 'translateX(-50%)';
             installButton.style.zIndex = '9999';
             installButton.style.padding = '10px 20px';
             installButton.classList.add('btn-grad');
